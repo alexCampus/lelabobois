@@ -67,7 +67,6 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
             },
         },
         mounted() {
-            console.log('hello example')
             this.msg()
 
 
