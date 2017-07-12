@@ -4,7 +4,7 @@
 	<title>Upload Page</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<style type="text/css">
-#portfolio { width:100%; margin:20px 0px; }
+#portfolio { width:100%; margin:20px 25px 10px 25px; }
 .tile { float:left; min-height:100px; max-height:300px; width:20%; border:1px #fff solid; }
 .tile:hover { opacity: 0.8; }
 button{margin-top: 5px;}
@@ -59,11 +59,6 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
 		
 	</div>
 
-
-
-
-
-
 	<div class="container-fluid">
 		<div class="row">
 			<div id="portfolio">
@@ -79,11 +74,10 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
 			  			</div>
 					@endforeach
 				@endisset
-
 			</div>
-			
 		</div>
 	</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -98,10 +92,6 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
     }, 500);
 		
 	});
-
-
-
-
   // We can attach the `fileselect` event to all file inputs on the page
   $(document).on('change', ':file', function() {
     var input = $(this),
@@ -122,7 +112,6 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
           } else {
               if( log ) alert(log);
           }
-
       });
   });
   

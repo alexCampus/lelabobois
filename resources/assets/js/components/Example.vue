@@ -1,17 +1,13 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Slide Component</div>
-                    <router-link tag="button" to="/" class='btn btn-default pull-right'>
-                      Retour
-                    </router-link>
-                    <div class="panel-body">
-                        
-                    </div>
-                </div>
-            </div>
+            <router-link to="/" class='btn wow tada btn-embossed btn-primary pull-left'>
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </router-link>
+            <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
+                <h2>{{ title}} </h2>
+                <p class="lead" style="margin-top:0">{{subtitle}}</p>
+             </div>
         </div>
        
         <carousel-3d :autoplayTimeout="3000" :animationSpeed="1000" :controls-visible="true" :inverse-scaling="2000" :space="1000" :autoplay="true" :width="600" :height="400" :count="images.length">
@@ -19,7 +15,7 @@
                 <img :src="image">
             </slide>
         </carousel-3d>
-
+        <p class="lead">{{ content }}</p>
     </div>
 </template>
 
@@ -34,8 +30,9 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
         },
         data () {
             return {
-                message: '',
+                title: '',
                 content:'',
+                subtitle: '',
                 images: [],
             }
         },
@@ -43,20 +40,23 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
             msg() {
                 if(this.$route.query['onglet'] === 'charpente')
                 {
-                    this.message = "Je suis Charpente"
-                    this.content = "truc"
+                    this.title = "Charpente"
+                    this.content = "Le labo Bois met son expertise à votre disposition pour réaliser vos travaux de charpente bois des plus simples au plus complexes. Une étude au préalable sera effectuée, pour vous proposer la meilleure solution à votre projet et répondre au plus près à vos attentes. N’hésitez pas à nous contacter pour réaliser"
+                    this.subtitle = "Travaux structurels de Charpente traditionnelle de la conception à la pose."
                     axios.get('/api/imgCharpente').then(response => this.images = response.data)
                 } 
                 if(this.$route.query['onglet'] === 'menuiserie')
                 {
-                    this.message = 'Je suis Menuiserie'
-                    this.content = "Menuiserie"
+                    this.title = 'Menuiserie/Bardage'
+                    this.content = "Le Labo Bois effectue toutes sortes d’aménagements extérieur et intérieur. Pose de bardage ou de lambris en sous face, sur mur ou plafond. Réalisation de terrasses en extérieurs, Montage de balcons et de barrières. Pose d’escalier intérieur extérieur."
+                    this.subtitle = "De la Réalisation d’escalier, balcon, terrasse à la pose de bardage lambris."
                     axios.get('/api/imgMenuiserie').then(response => this.images = response.data)
                 }
                 if(this.$route.query['onglet'] === 'couverture')
                 {
-                    this.message = 'Je suis Couverture'
-                    this.content = "Couverture"
+                    this.title = 'Couverture'
+                    this.content = "De la rénovation de toiture à la pose sur votre nouveau projet. Tous matériaux de couverture tuiles, ardoises, tôles et tavaillons, ainsi que les membranes goudronnées, polymères et élastomères."
+                    this.subtitle = "Couverture Traditionnelle, Tuile, ardoise, tôle, tavaillon, étanchéité."
                     axios.get('/api/imgCouverture').then(response => this.images = response.data)
                 }
             },
@@ -66,7 +66,12 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
                 this.msg()
             },
         },
+        created() {
+            //Scrolls to top when view is displayed
+            window.scrollTo(0, 1000);
+        },
         mounted() {
+            console.log("hello",this.$route.query['onglet'])
             this.msg()
 
 

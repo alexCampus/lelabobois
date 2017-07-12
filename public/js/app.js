@@ -14017,6 +14017,66 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -14026,7 +14086,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        console.log('mounted accueil');
+        console.log('Hello accueil');
     }
 });
 
@@ -14061,10 +14121,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -14076,8 +14132,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            message: '',
+            title: '',
             content: '',
+            subtitle: '',
             images: []
         };
     },
@@ -14087,22 +14144,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             if (this.$route.query['onglet'] === 'charpente') {
-                this.message = "Je suis Charpente";
-                this.content = "truc";
+                this.title = "Charpente";
+                this.content = "Le labo Bois met son expertise à votre disposition pour réaliser vos travaux de charpente bois des plus simples au plus complexes. Une étude au préalable sera effectuée, pour vous proposer la meilleure solution à votre projet et répondre au plus près à vos attentes. N’hésitez pas à nous contacter pour réaliser";
+                this.subtitle = "Travaux structurels de Charpente traditionnelle de la conception à la pose.";
                 axios.get('/api/imgCharpente').then(function (response) {
                     return _this.images = response.data;
                 });
             }
             if (this.$route.query['onglet'] === 'menuiserie') {
-                this.message = 'Je suis Menuiserie';
-                this.content = "Menuiserie";
+                this.title = 'Menuiserie/Bardage';
+                this.content = "Le Labo Bois effectue toutes sortes d’aménagements extérieur et intérieur. Pose de bardage ou de lambris en sous face, sur mur ou plafond. Réalisation de terrasses en extérieurs, Montage de balcons et de barrières. Pose d’escalier intérieur extérieur.";
+                this.subtitle = "De la Réalisation d’escalier, balcon, terrasse à la pose de bardage lambris.";
                 axios.get('/api/imgMenuiserie').then(function (response) {
                     return _this.images = response.data;
                 });
             }
             if (this.$route.query['onglet'] === 'couverture') {
-                this.message = 'Je suis Couverture';
-                this.content = "Couverture";
+                this.title = 'Couverture';
+                this.content = "De la rénovation de toiture à la pose sur votre nouveau projet. Tous matériaux de couverture tuiles, ardoises, tôles et tavaillons, ainsi que les membranes goudronnées, polymères et élastomères.";
+                this.subtitle = "Couverture Traditionnelle, Tuile, ardoise, tôle, tavaillon, étanchéité.";
                 axios.get('/api/imgCouverture').then(function (response) {
                     return _this.images = response.data;
                 });
@@ -14114,7 +14174,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.msg();
         }
     },
+    created: function created() {
+        //Scrolls to top when view is displayed
+        window.scrollTo(0, 1000);
+    },
     mounted: function mounted() {
+        console.log("hello", this.$route.query['onglet']);
         this.msg();
     }
 });
@@ -14205,7 +14270,8 @@ var routes = [{
 }];
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-	routes: routes
+	routes: routes,
+	mode: 'history'
 }));
 
 /***/ }),
@@ -44142,21 +44208,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container"
   }, [_c('div', {
     staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Slide Component")]), _vm._v(" "), _c('router-link', {
-    staticClass: "btn btn-default pull-right",
+  }, [_c('router-link', {
+    staticClass: "btn wow tada btn-embossed btn-primary pull-left",
     attrs: {
-      "tag": "button",
       "to": "/"
     }
-  }, [_vm._v("\n                  Retour\n                ")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  })], 1)])]), _vm._v(" "), _c('carousel-3d', {
+  }, [_c('i', {
+    staticClass: "fa fa-arrow-left",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 col-md-offset-3 text-center wrap_title "
+  }, [_c('h2', [_vm._v(_vm._s(_vm.title) + " ")]), _vm._v(" "), _c('p', {
+    staticClass: "lead",
+    staticStyle: {
+      "margin-top": "0"
+    }
+  }, [_vm._v(_vm._s(_vm.subtitle))])])], 1), _vm._v(" "), _c('carousel-3d', {
     attrs: {
       "autoplayTimeout": 3000,
       "animationSpeed": 1000,
@@ -44178,7 +44247,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "src": image
       }
     })])
-  }))], 1)
+  })), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v(_vm._s(_vm.content))])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -44195,49 +44266,139 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
-  }, [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Accueil Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_c('h1', [_vm._v("Hello world")]), _vm._v(" "), _c('a', {
+    staticClass: "col-sm-4 wow fadeInDown text-center"
+  }, [_c('img', {
+    staticClass: "rotate",
     attrs: {
-      "href": "/upload"
+      "src": "img/icon/tweet.svg",
+      "alt": "Generic placeholder image"
     }
-  }, [_vm._v("Upload")]), _vm._v(" "), _c('router-link', {
-    attrs: {
-      "to": {
-        path: 'details',
-        query: {
-          onglet: 'menuiserie'
-        }
-      }
-    }
-  }, [_vm._v("Menuiserie")]), _vm._v(" "), _c('router-link', {
+  }), _vm._v(" "), _c('h3', [_vm._v("Charpente")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("Travaux structurels de Charpente traditionnelle de la conception à la pose.")]), _vm._v(" "), _c('router-link', {
     attrs: {
       "to": {
         path: 'details',
         query: {
           onglet: 'charpente'
         }
-      }
+      },
+      "replace": ""
     }
-  }, [_vm._v("Charpente")]), _vm._v(" "), _c('router-link', {
+  }, [_c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view"
+  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-4 wow fadeInDown text-center"
+  }, [_c('img', {
+    staticClass: "rotate",
+    attrs: {
+      "src": "img/icon/retina.svg",
+      "alt": "Generic placeholder image"
+    }
+  }), _vm._v(" "), _c('h3', [_vm._v("Menuiserie - Bardage")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("De la Réalisation d’escalier, balcon, terrasse à la pose de bardage lambris.")]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": {
+        path: 'details',
+        query: {
+          onglet: 'menuiserie'
+        }
+      },
+      "replace": ""
+    }
+  }, [_c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view",
+    attrs: {
+      "role": "button"
+    }
+  }, [_vm._v("Details")])])])], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "row tworow"
+  }, [_c('div', {
+    staticClass: "col-sm-4  wow fadeInDown text-center"
+  }, [_c('img', {
+    staticClass: "rotate",
+    attrs: {
+      "src": "img/icon/laptop.svg",
+      "alt": "Generic placeholder image"
+    }
+  }), _vm._v(" "), _c('h3', [_vm._v("Couverture")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("Couverture Traditionnelle, Tuile, ardoise, tôle, tavaillon, étanchéité.")]), _vm._v(" "), _c('router-link', {
     attrs: {
       "to": {
         path: 'details',
         query: {
           onglet: 'couverture'
         }
-      }
+      },
+      "replace": ""
     }
-  }, [_vm._v("Couverture")])], 1)])])])])
-},staticRenderFns: []}
+  }, [_c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view"
+  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-6 col-md-offset-3 text-center wrap_title"
+  }, [_c('h2', [_vm._v("Mes Activités")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-sm-4 wow fadeInDown text-center"
+  }, [_c('img', {
+    staticClass: "rotate",
+    attrs: {
+      "src": "img/intro/intro5.jpg",
+      "width": "100px",
+      "height": "100px",
+      "alt": "Generic placeholder image"
+    }
+  }), _vm._v(" "), _c('h3', [_vm._v("Construction Bois")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("De l’agrandissement en Ossature bois à la réalisation complète de votre projet.")]), _vm._v(" "), _c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view",
+    attrs: {
+      "role": "button",
+      "href": "about.html"
+    }
+  }, [_vm._v("Details")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-sm-4 wow fadeInDown text-center"
+  }, [_c('img', {
+    staticClass: "rotate",
+    attrs: {
+      "src": "img/icon/map.svg",
+      "alt": "Generic placeholder image"
+    }
+  }), _vm._v(" "), _c('h3', [_vm._v("Zinguerie")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("Travaux de Pliage et soudure de la Couvertine à la Gouttière, Pose de Velux.")]), _vm._v(" "), _c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view",
+    attrs: {
+      "role": "button"
+    }
+  }, [_vm._v("Details")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-sm-4 wow fadeInDown text-center"
+  }, [_c('img', {
+    staticClass: "rotate",
+    attrs: {
+      "src": "img/icon/browser.svg",
+      "alt": "Generic placeholder image"
+    }
+  }), _vm._v(" "), _c('h3', [_vm._v("Rénovation")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("De l’Isolation thermique et l’étanchéité à l’air à l’aménagement intérieur.")]), _vm._v(" "), _c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view",
+    attrs: {
+      "role": "button"
+    }
+  }, [_vm._v("Details")])])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
