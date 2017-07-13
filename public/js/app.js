@@ -14069,16 +14069,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            message: 'Hello World'
-        };
-    },
-    mounted: function mounted() {
-        console.log('Hello accueil');
-    }
-});
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 /* 35 */
@@ -14188,10 +14179,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.msg();
         }
     },
-    created: function created() {
-        //Scrolls to top when view is displayed
-        window.scrollTo(0, 800);
-    },
+    // created() {
+    //     //Scrolls to top when view is displayed
+    //     window.scrollTo(0, 800);
+    // },
     mounted: function mounted() {
         this.msg();
     }

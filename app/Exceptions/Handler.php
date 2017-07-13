@@ -55,8 +55,11 @@ class Handler extends ExceptionHandler
                 case 404:
                     return redirect()->guest('/');
                     break;
+                case 405:
+                    return redirect()->guest('/');
+                    break;
                 // internal server error
-                case '500':
+                case 500:
                     return redirect()->guest('/');
                     break;
                 default:
@@ -80,6 +83,6 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
-        return redirect()->guest(route('login'));
+        return redirect()->guest('/');
     }
 }

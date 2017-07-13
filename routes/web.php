@@ -12,11 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('test');
-});
-
-Route::get('/welcome', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('upload', 'uploadController@index')->middleware('auth');
@@ -25,4 +21,8 @@ Route::post('store', 'uploadController@store')->middleware('auth');
 Route::post('remove', 'uploadController@remove')->middleware('auth');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::match(['get', 'post'], 'register', function(){
+    return redirect('/');
+});
+
+

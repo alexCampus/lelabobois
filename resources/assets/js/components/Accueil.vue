@@ -71,13 +71,5 @@
 <script>
 import Vue from 'vue';
     export default {
-        data () {
-            return {
-                message: 'Hello World',
-            }
-        },
-        mounted() {
-            console.log('Hello accueil')
-        }
     }
 </script>

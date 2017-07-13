@@ -87,10 +87,10 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
                 this.msg()
             },
         },
-        created() {
-            //Scrolls to top when view is displayed
-            window.scrollTo(0, 800);
-        },
+        // created() {
+        //     //Scrolls to top when view is displayed
+        //     window.scrollTo(0, 800);
+        // },
         mounted() {
             this.msg()
         }
