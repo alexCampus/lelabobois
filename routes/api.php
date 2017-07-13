@@ -20,3 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('imgCharpente', 'apiController@imgCharpente');
 Route::get('imgMenuiserie', 'apiController@imgMenuiserie');
 Route::get('imgCouverture', 'apiController@imgCouverture');
+Route::get('imgZinguerie', 'apiController@imgZinguerie');
+Route::get('imgRenovation', 'apiController@imgRenovation');
+Route::get('imgConstruction', 'apiController@imgConstruction');

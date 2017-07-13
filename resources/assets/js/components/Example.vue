@@ -10,7 +10,7 @@
              </div>
         </div>
        
-        <carousel-3d :autoplayTimeout="3000" :animationSpeed="1000" :controls-visible="true" :inverse-scaling="2000" :space="1000" :autoplay="true" :width="600" :height="400" :count="images.length">
+        <carousel-3d :autoplayTimeout="3000" :animationSpeed="1000" :controls-visible="true" :inverse-scaling="2000" :space="1000" :autoplay="true" :width="800" :height="400" :count="images.length">
             <slide v-for="(image, i) in images" :index="i">
                 <img :src="image">
             </slide>
@@ -59,6 +59,27 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
                     this.subtitle = "Couverture Traditionnelle, Tuile, ardoise, tôle, tavaillon, étanchéité."
                     axios.get('/api/imgCouverture').then(response => this.images = response.data)
                 }
+                if(this.$route.query['onglet'] === 'construction-bois')
+                {
+                    this.title = 'Construction Bois'
+                    this.content = "La construction bois permet une fabrication rapide et maitrisée, mais aussi des possibilités plus larges en termes d’imagination. Différents type de fabrication sont possibles, tant en terme de structure que d’isolation et d’imperméabilité."
+                    this.subtitle = "De l’agrandissement en Ossature bois à la réalisation complète de votre projet."
+                    axios.get('/api/imgConstruction').then(response => this.images = response.data)
+                }
+                if(this.$route.query['onglet'] === 'zinguerie')
+                {
+                    this.title = 'Zinguerie'
+                    this.content = "Tous travaux de zinguerie. Pose et rénovation. Cuivre, Zinc, tôle ou plomb selon travaux : Couvertines de mur, gouttières et chéneaux, faitages et rives, abergements et frontons… Montage Velux."
+                    this.subtitle = "Travaux de Pliage et soudure de la Couvertine à la Gouttière, Pose de Velux."
+                    axios.get('/api/imgZinguerie').then(response => this.images = response.data)
+                }
+                if(this.$route.query['onglet'] === 'renovation')
+                {
+                    this.title = 'Rénovation'
+                    this.content = "Le labo Bois propose son savoir faire pour réaliser au mieux votre confort intérieur. Utilisation de produit sain et durable pour votre isolation, mise en avant du bois en tant isolant. Conseil et pose."
+                    this.subtitle = "De l’Isolation thermique et l’étanchéité à l’air à l’aménagement intérieur."
+                    axios.get('/api/imgRenovation').then(response => this.images = response.data)
+                }
             },
         },
         watch: {
@@ -68,13 +89,10 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
         },
         created() {
             //Scrolls to top when view is displayed
-            window.scrollTo(0, 1000);
+            window.scrollTo(0, 800);
         },
         mounted() {
-            console.log("hello",this.$route.query['onglet'])
             this.msg()
-
-
         }
     }
 </script>

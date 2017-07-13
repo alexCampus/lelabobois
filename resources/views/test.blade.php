@@ -10,27 +10,27 @@
     <title>le Labo Bois</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
  
     <!-- Custom Google Web Font -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 	
     <!-- Custom CSS-->
-    <link href="css/general.css" rel="stylesheet">
+    <link href="{{ asset('css/general.css') }}" rel="stylesheet">
 	
 	 <!-- Owl-Carousel -->
-    <link href="css/custom.css" rel="stylesheet">
-	<link href="css/owl.carousel.css" rel="stylesheet">
-    <link href="css/owl.theme.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/animate.css" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.theme.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/animate.css') }}" rel="stylesheet">
 	
 	<!-- Magnific Popup core CSS file -->
-	<link rel="stylesheet" href="css/magnific-popup.css"> 
+	<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 	
-	<script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->
+	<script src="{{ asset('js/modernizr-2.8.3.min.js') }}"></script>  <!-- Modernizr /-->
 </head>
 
 <body id="home">
@@ -45,11 +45,12 @@
 		<div class="col-xs-12 text-center abcen1">
 			<h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">Le Labo Bois</h1>
 			<h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">Habitat Durable</h3>
+			<img src="{{ asset('img/intro/laboboisblanc.png') }}">
 		</div>    
         <!-- /.container -->
 		<div class="col-xs-12 text-center abcen wow fadeIn">
 			<div class="button_down "> 
-				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#activite"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
+				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#activite"> <img class="img_scroll" src="{{asset('img/icon/circle.png')}}" alt="icon scroll"> </a>
 			</div>
 		</div>
     </div>
@@ -100,41 +101,37 @@
 		    <div class="row wow bounceInUp" >
               <div id="owl-demo" class="owl-carousel">
 				
-				<a href="img/slide/1.png" class="image-link">
+				<a href="{{ asset( 'img/slide/slide_1.JPG' ) }}" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/1.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="{{ asset( 'img/slide/slide_1.JPG' ) }}" alt="Owl Image">
 					</div>
 				</a>
 				
-               <a href="img/slide/2.png" class="image-link">
+               <a href="{{ asset( 'img/slide/slide_2.JPG' ) }}" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/2.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="{{ asset( 'img/slide/slide_2.JPG' ) }}" alt="Owl Image">
 					</div>
 				</a>
 				
-				<a href="img/slide/3.png" class="image-link">
+				<a href="{{ asset( 'img/slide/slide_3.JPG' ) }}" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/3.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="{{ asset( 'img/slide/slide_3.JPG' ) }}" alt="Owl Image">
 					</div>
 				</a>
 				
-				<a href="img/slide/1.png" class="image-link">
+				<a href="{{ asset( 'img/slide/slide_4.JPG' ) }}" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/1.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="{{ asset( 'img/slide/slide_4.JPG' ) }}" alt="Owl Image">
 					</div>
 				</a>
 				
-               <a href="img/slide/2.png" class="image-link">
+               <a href="{{ asset( 'img/slide/slide_5.JPG' ) }}" class="image-link">
 					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/2.png" alt="Owl Image">
+						<img  class="img-responsive img-rounded" src="{{ asset( 'img/slide/slide_5.JPG' ) }}" alt="Owl Image">
 					</div>
 				</a>
 				
-				<a href="img/slide/3.png" class="image-link">
-					<div class="item">
-						<img  class="img-responsive img-rounded" src="img/slide/3.png" alt="Owl Image">
-					</div>
-				</a>
+
               </div>       
           </div>
         </div>
@@ -148,7 +145,7 @@
             <div class="row">
 			
 				<div class="col-sm-6 pull-right wow fadeInRightBig">
-                    <img class="img-responsive " src="img/IMG_1678.JPG" alt="">
+                    <img class="img-responsive " src="{{ asset('img/about.JPG') }}" alt="photo de profil du labobois">
                 </div>
 				
                 <div class="col-sm-6 wow fadeInLeftBig"  data-animation-delay="200">   
@@ -189,7 +186,7 @@
 				<p class="lead" style="margin-top:0">Julian Vandevelde le Labo Bois</p>
 			</div>
 			
-			<form role="form" action="" method="post" >
+			<form role="form" action="#" method="#" >
 				<div class="col-md-6">
 					<div class="form-group">
 						<label for="InputName">Votre Nom</label>
@@ -202,7 +199,7 @@
 					<div class="form-group">
 						<label for="InputName">Votre Téléphone</label>
 						<div class="input-group">
-							<input type="text" class="form-control" name="InputName" id="InputName" placeholder="Votre Nom" required>
+							<input type="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" class="form-control" name="InputName" id="InputName" placeholder="Votre Téléphone" required>
 							<span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
 						</div>
 					</div>
@@ -223,7 +220,7 @@
 						</div>
 					</div>
 
-					<input type="submit" name="submit" id="submit" value="Submit" class="btn wow tada btn-embossed btn-primary pull-right">
+					<input type="submit" name="submit" id="submit" value="Envoyer" class="btn wow tada btn-embossed btn-primary pull-right">
 				</div>
 			</form>
 			
@@ -258,8 +255,10 @@
           <div class="col-md-7">
            		<div class="col-sm-6  block wow bounceIn">
 					<div class="row">
-						<div class="col-md-4 box-icon rotate"> 
-							<i class="fa fa-desktop fa-4x "> </i> 
+						<div class="col-md-4 box-icon">
+							<a href="https://www.cabestan.fr/">
+								<img src="{{ asset('img/icon/icoCabestan.jpg') }}">
+							</a>
 						</div>
 							<h3>Cabestan</h3>
 							<p class="lead">Coopérer pour mieux construire</p>
@@ -272,12 +271,12 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="{{ URL::asset('js/jquery-1.10.2.js') }}"></script>
-    <script src="js/bootstrap.js"></script>
-	<script src="js/owl.carousel.js"></script>
-	<script src="{{ URL::asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/jquery-1.10.2.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+	<script src="{{ asset('js/owl.carousel.js') }}"></script>
+	<script src="{{ asset('js/script.js') }}"></script>
 	<!-- StikyMenu -->
-	<script src="js/stickUp.min.js"></script>
+	<script src="{{ asset('js/stickUp.min.js') }}"></script>
 	<script type="text/javascript">
 	  jQuery(function($) {
 		$(document).ready( function() {
@@ -288,16 +287,16 @@
 	
 	</script>
 	<!-- Smoothscroll -->
-	<script type="text/javascript" src="js/jquery.corner.js"></script> 
-	<script src="js/wow.min.js"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.corner.js') }}"></script>
+	<script src="{{ asset('js/wow.min.js') }}"></script>
 	<script>
 	 new WOW().init();
 	</script>
-	<script src="js/classie.js"></script>
-	<script src="js/uiMorphingButton_inflow.js"></script>
+	<script src="{{ asset('js/classie.js') }}"></script>
+	<script src="{{ asset('js/uiMorphingButton_inflow.js') }}"></script>
 	<!-- Magnific Popup core JS file -->
-	<script src="{{ URL::asset('js/jquery.magnific-popup.js') }}"></script> 
-	<script type="text/javascript" src="/js/app.js"></script>
+	<script src="{{ asset('js/jquery.magnific-popup.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

@@ -14067,16 +14067,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -14167,6 +14157,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     return _this.images = response.data;
                 });
             }
+            if (this.$route.query['onglet'] === 'construction-bois') {
+                this.title = 'Construction Bois';
+                this.content = "La construction bois permet une fabrication rapide et maitrisée, mais aussi des possibilités plus larges en termes d’imagination. Différents type de fabrication sont possibles, tant en terme de structure que d’isolation et d’imperméabilité.";
+                this.subtitle = "De l’agrandissement en Ossature bois à la réalisation complète de votre projet.";
+                axios.get('/api/imgConstruction').then(function (response) {
+                    return _this.images = response.data;
+                });
+            }
+            if (this.$route.query['onglet'] === 'zinguerie') {
+                this.title = 'Zinguerie';
+                this.content = "Tous travaux de zinguerie. Pose et rénovation. Cuivre, Zinc, tôle ou plomb selon travaux : Couvertines de mur, gouttières et chéneaux, faitages et rives, abergements et frontons… Montage Velux.";
+                this.subtitle = "Travaux de Pliage et soudure de la Couvertine à la Gouttière, Pose de Velux.";
+                axios.get('/api/imgZinguerie').then(function (response) {
+                    return _this.images = response.data;
+                });
+            }
+            if (this.$route.query['onglet'] === 'renovation') {
+                this.title = 'Rénovation';
+                this.content = "Le labo Bois propose son savoir faire pour réaliser au mieux votre confort intérieur. Utilisation de produit sain et durable pour votre isolation, mise en avant du bois en tant isolant. Conseil et pose.";
+                this.subtitle = "De l’Isolation thermique et l’étanchéité à l’air à l’aménagement intérieur.";
+                axios.get('/api/imgRenovation').then(function (response) {
+                    return _this.images = response.data;
+                });
+            }
         }
     },
     watch: {
@@ -14176,10 +14190,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     created: function created() {
         //Scrolls to top when view is displayed
-        window.scrollTo(0, 1000);
+        window.scrollTo(0, 800);
     },
     mounted: function mounted() {
-        console.log("hello", this.$route.query['onglet']);
         this.msg();
     }
 });
@@ -44233,7 +44246,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "inverse-scaling": 2000,
       "space": 1000,
       "autoplay": true,
-      "width": 600,
+      "width": 800,
       "height": 400,
       "count": _vm.images.length
     }
@@ -44273,7 +44286,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('img', {
     staticClass: "rotate",
     attrs: {
-      "src": "img/icon/tweet.svg",
+      "src": "img/icon/icoCharpente.jpg",
       "alt": "Generic placeholder image"
     }
   }), _vm._v(" "), _c('h3', [_vm._v("Charpente")]), _vm._v(" "), _c('p', {
@@ -44290,12 +44303,36 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('p', [_c('a', {
     staticClass: "btn btn-embossed btn-primary view"
-  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _c('div', {
     staticClass: "col-sm-4 wow fadeInDown text-center"
   }, [_c('img', {
     staticClass: "rotate",
     attrs: {
-      "src": "img/icon/retina.svg",
+      "src": "img/icon/icoConstruction.JPG",
+      "width": "100px",
+      "height": "100px",
+      "alt": "Generic placeholder image"
+    }
+  }), _vm._v(" "), _c('h3', [_vm._v("Construction Bois")]), _vm._v(" "), _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("De l’agrandissement en Ossature bois à la réalisation complète de votre projet.")]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": {
+        path: 'details',
+        query: {
+          onglet: 'construction-bois'
+        }
+      },
+      "replace": ""
+    }
+  }, [_c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view"
+  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-4 wow fadeInDown text-center"
+  }, [_c('img', {
+    staticClass: "rotate",
+    attrs: {
+      "src": "img/icon/icoMenuiserie.jpg",
       "alt": "Generic placeholder image"
     }
   }), _vm._v(" "), _c('h3', [_vm._v("Menuiserie - Bardage")]), _vm._v(" "), _c('p', {
@@ -44322,7 +44359,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('img', {
     staticClass: "rotate",
     attrs: {
-      "src": "img/icon/laptop.svg",
+      "src": "img/icon/icoCouverture.JPG",
       "alt": "Generic placeholder image"
     }
   }), _vm._v(" "), _c('h3', [_vm._v("Couverture")]), _vm._v(" "), _c('p', {
@@ -44339,65 +44376,55 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('p', [_c('a', {
     staticClass: "btn btn-embossed btn-primary view"
-  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-6 col-md-offset-3 text-center wrap_title"
-  }, [_c('h2', [_vm._v("Mes Activités")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _c('div', {
     staticClass: "col-sm-4 wow fadeInDown text-center"
   }, [_c('img', {
     staticClass: "rotate",
     attrs: {
-      "src": "img/intro/intro5.jpg",
-      "width": "100px",
-      "height": "100px",
-      "alt": "Generic placeholder image"
-    }
-  }), _vm._v(" "), _c('h3', [_vm._v("Construction Bois")]), _vm._v(" "), _c('p', {
-    staticClass: "lead"
-  }, [_vm._v("De l’agrandissement en Ossature bois à la réalisation complète de votre projet.")]), _vm._v(" "), _c('p', [_c('a', {
-    staticClass: "btn btn-embossed btn-primary view",
-    attrs: {
-      "role": "button",
-      "href": "about.html"
-    }
-  }, [_vm._v("Details")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-sm-4 wow fadeInDown text-center"
-  }, [_c('img', {
-    staticClass: "rotate",
-    attrs: {
-      "src": "img/icon/map.svg",
+      "src": "img/icon/icoZinguerie.JPG",
       "alt": "Generic placeholder image"
     }
   }), _vm._v(" "), _c('h3', [_vm._v("Zinguerie")]), _vm._v(" "), _c('p', {
     staticClass: "lead"
-  }, [_vm._v("Travaux de Pliage et soudure de la Couvertine à la Gouttière, Pose de Velux.")]), _vm._v(" "), _c('p', [_c('a', {
-    staticClass: "btn btn-embossed btn-primary view",
+  }, [_vm._v("Travaux de Pliage et soudure de la Couvertine à la Gouttière, Pose de Velux.")]), _vm._v(" "), _c('router-link', {
     attrs: {
-      "role": "button"
+      "to": {
+        path: 'details',
+        query: {
+          onglet: 'zinguerie'
+        }
+      },
+      "replace": ""
     }
-  }, [_vm._v("Details")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view"
+  }, [_vm._v("Details")])])])], 1), _vm._v(" "), _c('div', {
     staticClass: "col-sm-4 wow fadeInDown text-center"
   }, [_c('img', {
     staticClass: "rotate",
     attrs: {
-      "src": "img/icon/browser.svg",
+      "src": "img/icon/icoRenovation.jpg",
       "alt": "Generic placeholder image"
     }
   }), _vm._v(" "), _c('h3', [_vm._v("Rénovation")]), _vm._v(" "), _c('p', {
     staticClass: "lead"
-  }, [_vm._v("De l’Isolation thermique et l’étanchéité à l’air à l’aménagement intérieur.")]), _vm._v(" "), _c('p', [_c('a', {
-    staticClass: "btn btn-embossed btn-primary view",
+  }, [_vm._v("De l’Isolation thermique et l’étanchéité à l’air à l’aménagement intérieur.")]), _vm._v(" "), _c('router-link', {
     attrs: {
-      "role": "button"
+      "to": {
+        path: 'details',
+        query: {
+          onglet: 'renovation'
+        }
+      },
+      "replace": ""
     }
-  }, [_vm._v("Details")])])])
+  }, [_c('p', [_c('a', {
+    staticClass: "btn btn-embossed btn-primary view"
+  }, [_vm._v("Details")])])])], 1)])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-6 col-md-offset-3 text-center wrap_title"
+  }, [_c('h2', [_vm._v("Mes Activités")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

@@ -23,7 +23,7 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
 					<label class="input-group-btn">
 						<span class="btn btn-primary">
 	    					Upload Image 
-	    					<input type="file" name="image" style="display: none;" multiple>
+	    					<input type="file" name="image" style="display: none;">
 							
 						</span>
 					</label>
@@ -39,6 +39,15 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
 			    <label class="radio-inline">
 			      	<input type="radio" name="optradio" value="couverture" required>Couverture
 			    </label>
+				<label class="radio-inline">
+					<input type="radio" name="optradio" value="constructionBois" required>Construction Bois
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="optradio" value="renovation" required>Rénovation
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="optradio" value="zinguerie" required>Zinguerie
+				</label>
 				<br><br>
 				<button type="submit" class="btn btn-default">Upload</button>
 				
@@ -50,8 +59,11 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
 			  	<select class="form-control" name="categorie">
 			  		<option value="all">Toutes</option>
 			    	<option value="menuiserie">Menuiserie</option>
+					<option value="constructionBois">Construction Bois</option>
 			    	<option value="charpente">Charpente</option>
 				    <option value="couverture">Couverture</option>
+					<option value="renovation">Rénovation</option>
+					<option value="zinguerie">Zinguerie</option>
 			  	</select>
 			  	<button type="submit" class="btn btn-default">Refresh</button>
 			</form>

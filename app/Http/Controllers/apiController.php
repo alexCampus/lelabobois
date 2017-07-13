@@ -42,4 +42,40 @@ class apiController extends Controller
 
 		return $images;
     }
+
+    public function imgRenovation()
+    {
+        $images = [];
+        $imgs = Storage::files('public/renovation');
+        foreach ($imgs as $image) {
+            $img = Storage::url($image);
+            array_push($images, $img);
+        }
+
+        return $images;
+    }
+
+    public function imgZinguerie()
+    {
+        $images = [];
+        $imgs = Storage::files('public/zinguerie');
+        foreach ($imgs as $image) {
+            $img = Storage::url($image);
+            array_push($images, $img);
+        }
+
+        return $images;
+    }
+
+    public function imgConstruction()
+    {
+        $images = [];
+        $imgs = Storage::files('public/constructionBois');
+        foreach ($imgs as $image) {
+            $img = Storage::url($image);
+            array_push($images, $img);
+        }
+
+        return $images;
+    }
 }

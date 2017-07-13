@@ -20,9 +20,19 @@ class uploadController extends Controller
         if ($request['categorie'] === 'couverture') {
           $imgs = Storage::files('public/couverture');
         }
+        if ($request['categorie'] === 'constructionBois') {
+            $imgs = Storage::files('public/constructionBois');
+        }
+        if ($request['categorie'] === 'renovation') {
+            $imgs = Storage::allFiles('public/renovation');
+        }
+        if ($request['categorie'] === 'zinguerie') {
+            $imgs = Storage::allFiles('public/zinguerie');
+        }
         if ($request['categorie'] === 'all') {
           $imgs = Storage::allFiles('public/');
         }
+
       } else {
         $imgs = Storage::allFiles('public/');
       }
@@ -36,7 +46,7 @@ class uploadController extends Controller
 
     public function store(request $request) 
     {
-    	if ($request->hasFile('image')) 
+    	if ($request->hasFile('image'))
     	{
     		$img = $request->file('image')->getClientOriginalName();
     		if ($request['optradio'] === 'menuiserie') {
@@ -48,12 +58,21 @@ class uploadController extends Controller
        		if ($request['optradio'] === 'couverture') {
     			$request->file('image')->storeAs('public/couverture', $img);
        		}
+            if ($request['optradio'] === 'constructionBois') {
+                $request->file('image')->storeAs('public/constructionBois', $img);
+            }
+            if ($request['optradio'] === 'renovation') {
+                $request->file('image')->storeAs('public/renovation', $img);
+            }
+            if ($request['optradio'] === 'zinguerie') {
+                $request->file('image')->storeAs('public/zinguerie', $img);
+            }
 
     		return redirect('/upload');
     	}
 
 
-    	return 'No Files';
+    	return 'The files is too big';
     }
 
     public function remove(request $request)

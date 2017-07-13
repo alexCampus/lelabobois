@@ -19,7 +19,10 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('upload', 'uploadController@index');
-Route::post('upload', 'uploadController@index');
-Route::post('store', 'uploadController@store');
-Route::post('remove', 'uploadController@remove');
+Route::get('upload', 'uploadController@index')->middleware('auth');
+Route::post('upload', 'uploadController@index')->middleware('auth');
+Route::post('store', 'uploadController@store')->middleware('auth');
+Route::post('remove', 'uploadController@remove')->middleware('auth');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
