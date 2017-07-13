@@ -231,7 +231,6 @@
 					
 						<div class="google-maps">
 							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44994.320601441046!2d5.680523046148358!3d45.1841601991112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af48bd689be6f%3A0x618c10cd6e995398!2sGrenoble!5e0!3m2!1sfr!2sfr!4v1496867064499" width="600" height="450" frameborder="0" style="border:0" ></iframe>
-							
 						</div>
 						<p class="lead">
 						38100 Grenoble <br>
@@ -239,7 +238,6 @@
 						<a href="https://www.facebook.com/pg/Le-LaBo-Bois-1354459914643087/about/?ref=page_internal"><i class="fa fa-facebook-square fa-2x"> </i></a>
 					</p>
 					</address>
-	
 				</div>
 			</div>
 		</div>
@@ -248,21 +246,17 @@
     <footer>
       <div class="container">
         <div class="row">
-          <center>
-           	<h3>Partenaire</h3>
-          	
-          </center>
+           	<h3 style="text-align: center">Partenaire</h3>
           <div class="col-md-7">
            		<div class="col-sm-6  block wow bounceIn">
 					<div class="row">
 						<div class="col-md-4 box-icon">
 							<a href="https://www.cabestan.fr/">
-								<img src="{{ asset('img/icon/icoCabestan.jpg') }}">
-
+								<img src="{{ asset('img/icon/icoCabestan.jpg') }}" alt="Cabestan coopérative du batiment (charpente) à Grenoble">
+							</a>
 						</div>
 							<h3>Cabestan</h3>
 							<p class="lead">Coopérer pour mieux construire</p>
-						</a>
 							<p>Le labo bois fait partis de la coopérative d’entrepreneurs du bâtiment Cabestan et partage ses engagements dans la construction, mais aussi ses valeurs d’échanges humains et de coopération.</p>
 					</div>
 				</div>
