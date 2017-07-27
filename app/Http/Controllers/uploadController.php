@@ -29,6 +29,9 @@ class uploadController extends Controller
         if ($request['categorie'] === 'zinguerie') {
             $imgs = Storage::allFiles('public/zinguerie');
         }
+        if ($request['categorie'] === 'slide') {
+            $imgs = Storage::allFiles('public/slide');
+        }
         if ($request['categorie'] === 'all') {
           $imgs = Storage::allFiles('public/');
         }
@@ -41,6 +44,7 @@ class uploadController extends Controller
          $img = Storage::url($image);
          array_push($images, $img);
       }
+
      return view('upload.upload', ['images' => $images]);
     }
 
@@ -58,15 +62,18 @@ class uploadController extends Controller
        		if ($request['optradio'] === 'couverture') {
     			$request->file('image')->storeAs('public/couverture', $img);
        		}
-            if ($request['optradio'] === 'constructionBois') {
-                $request->file('image')->storeAs('public/constructionBois', $img);
-            }
-            if ($request['optradio'] === 'renovation') {
-                $request->file('image')->storeAs('public/renovation', $img);
-            }
-            if ($request['optradio'] === 'zinguerie') {
-                $request->file('image')->storeAs('public/zinguerie', $img);
-            }
+          if ($request['optradio'] === 'constructionBois') {
+              $request->file('image')->storeAs('public/constructionBois', $img);
+          }
+          if ($request['optradio'] === 'renovation') {
+              $request->file('image')->storeAs('public/renovation', $img);
+          }
+          if ($request['optradio'] === 'zinguerie') {
+              $request->file('image')->storeAs('public/zinguerie', $img);
+          }
+          if ($request['optradio'] === 'slide') {
+              $request->file('image')->storeAs('public/slide', $img);
+          }
 
     		return redirect('/upload');
     	}

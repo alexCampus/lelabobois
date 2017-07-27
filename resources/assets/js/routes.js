@@ -15,5 +15,13 @@ let routes = [
 
 export default new VueRouter({
 	routes,
-	mode: 'history'
+	mode: 'history',
+	scrollBehavior (to, from, savedPosition) {
+  		if (to.hash) {
+    		return {
+      			selector: to.hash
+      			// , offset: { x: 0, y: 10 }
+    		}
+  		}
+	}
 });

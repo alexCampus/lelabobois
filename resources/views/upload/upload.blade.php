@@ -104,6 +104,9 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
 				<label class="radio-inline">
 					<input type="radio" name="optradio" value="zinguerie" required>Zinguerie
 				</label>
+				<label class="radio-inline">
+					<input type="radio" name="optradio" value="slide" required>Slide
+				</label>
 				<br><br>
 				<button type="submit" class="btn btn-default">Upload</button>
 				
@@ -120,6 +123,7 @@ img:hover { cursor:pointer; background: #333; color:#eee; }
 				    <option value="couverture">Couverture</option>
 					<option value="renovation">Rénovation</option>
 					<option value="zinguerie">Zinguerie</option>
+					<option value="slide">Slide</option>
 			  	</select>
 			  	<button type="submit" class="btn btn-default">Refresh</button>
 			</form>

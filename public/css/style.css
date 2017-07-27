@@ -328,6 +328,10 @@ li{list-style-type:none}
   line-height: 1.46428571;
   font-weight: 300;
 }
+
+p.justify {
+	text-align: justify;
+}
 @media (min-width: 768px) {
   .lead {
 	

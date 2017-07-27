@@ -5,7 +5,7 @@
               <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </router-link>
             <div class="col-md-6 col-md-offset-3 text-center wrap_title ">
-                <h2>{{ title}} </h2>
+                <h1>{{ title}} </h1>
                 <p class="lead" style="margin-top:0">{{subtitle}}</p>
              </div>
         </div>
@@ -16,6 +16,9 @@
             </slide>
         </carousel-3d>
         <p class="lead">{{ content }}</p>
+        <router-link to="/" class='btn wow tada btn-embossed btn-primary pull-left'>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </router-link>
     </div>
 </template>
 
@@ -47,7 +50,7 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
                 } 
                 if(this.$route.query['onglet'] === 'menuiserie')
                 {
-                    this.title = 'Menuiserie/Bardage'
+                    this.title = 'Menuiserie Bardage'
                     this.content = "Le Labo Bois effectue toutes sortes d’aménagements extérieur et intérieur. Pose de bardage ou de lambris en sous face, sur mur ou plafond. Réalisation de terrasses en extérieurs, Montage de balcons et de barrières. Pose d’escalier intérieur extérieur."
                     this.subtitle = "De la Réalisation d’escalier, balcon, terrasse à la pose de bardage lambris."
                     axios.get('/api/imgMenuiserie').then(response => this.images = response.data)
@@ -84,13 +87,11 @@ import { Carousel3d, Slide } from 'vue-carousel-3d';
         },
         watch: {
             '$route': function() {
-                this.msg()
+                this.msg()             
             },
         },
-        // created() {
-        //     //Scrolls to top when view is displayed
-        //     window.scrollTo(0, 800);
-        // },
+        created() {
+        },
         mounted() {
             this.msg()
         }

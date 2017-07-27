@@ -6,7 +6,7 @@ Build: 1.0
 http://www.andreagalanti.it
 */
 
-$(window).load(function() { 
+$(window).on('load',function() { 
 	//Preloader 
 	$('#status').delay(300).fadeOut(); 
 	$('#preloader').delay(300).fadeOut('slow');
@@ -40,7 +40,8 @@ $(document).ready(function($) {
 			autoPlay: 3000,
 			items : 3,
 			itemsDesktop : [1199,3],
-			itemsDesktopSmall : [979,3]
+			itemsDesktopSmall : [979,3],
+			autoHeight: true,
 		});
 
 		// OwlCarousel N2
@@ -52,7 +53,7 @@ $(document).ready(function($) {
 		});
 
 		//SmothScroll
-		$('a[href*=#]').click(function() {
+		$('a[href*=\\#]').click(function() {
 			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
 			&& location.hostname == this.hostname) {
 					var $target = $(this.hash);
